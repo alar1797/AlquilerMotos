@@ -20,8 +20,8 @@ public class Reservation implements Serializable  {
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    private Integer status;
-    private Integer score;
+    private String status="created";
+    private String score;
 
     @ManyToOne
     @JoinColumn(name = "motorbikeId")
