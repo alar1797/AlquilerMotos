@@ -1,5 +1,4 @@
-
-package com.example.moto.entities;
+ package com.example.moto.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;

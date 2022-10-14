@@ -61,15 +61,23 @@ public class ReservationService {
         }
     }
     
-    public boolean delete (int id){
-        boolean flag=false;
-        Optional<Reservation> p = reservationRepository.getReservation(id);
-        if(p.isPresent()){
-            reservationRepository.delete(p.get());
-            flag = true;
-        }
+    //public boolean delete (int id){
+      //  boolean flag=false;
+        //Optional<Reservation> p = reservationRepository.getReservation(id);
+        //if(p.isPresent()){
+          //  reservationRepository.delete(p.get());
+            //flag = true;
+        //}
                 
-        return flag;       
+        //return flag;       
+    //}
+
+    public boolean deleteReservation(int id){
+        Boolean d = getReservation(id).map(reservation -> {
+            reservationRepository.delete(reservation);
+            return true;
+        }).orElse(false);
+        return d;
     }
     
     
